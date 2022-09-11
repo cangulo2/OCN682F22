@@ -1,0 +1,424 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+
+\hypertarget{question-0}{%
+\subsubsection{Question 0}\label{question-0}}
+
+\begin{itemize}
+\tightlist
+\item
+  Draw a concepts diagram that uses all the following Github terminology
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Include any missing keywords that will simplify the concepts
+    diagrams
+  \end{itemize}
+\end{itemize}
+
+\texttt{Push}, \texttt{Repository}, \texttt{Clone}, \texttt{Pull},
+\texttt{Pull\ Request}, \texttt{Branch}, \texttt{Merging},
+\texttt{Github\ Client}, \texttt{README\ file},
+\texttt{Private\ or\ Public}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Add your photo here}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{question-1}{%
+\paragraph{Question 1}\label{question-1}}
+
+\texttt{matrix(c(1,2,3,4,5,6)\ ,\ nrow\ =\ 3)}
+
+\begin{itemize}
+\tightlist
+\item
+  Running the expression produces the following matrix
+\end{itemize}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\endhead
+1 & 4\tabularnewline
+2 & 5\tabularnewline
+3 & 6\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{itemize}
+\tightlist
+\item
+  How can you modify the call to \texttt{matrix()} to produce the
+  following matrix instead?
+\end{itemize}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+& col\_1 & col\_2\tabularnewline
+\midrule
+\endhead
+row\_1 & 1 & 2\tabularnewline
+row\_2 & 3 & 4\tabularnewline
+row\_3 & 5 & 6\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{itemize}
+\tightlist
+\item
+  Note that you need to name the columns (col\_1 and col\_2) and name
+  the rows (row\_1, row\_2, row\_3)
+\end{itemize}
+
+Hint: Use the \texttt{?} symbol to invoke the matrix documentation
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Write your answer here}
+\NormalTok{test_matrix <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{6}\NormalTok{), }\DataTypeTok{nrow=}\DecValTok{3}\NormalTok{)}
+\KeywordTok{rownames}\NormalTok{(test_matrix)<-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"row_1"}\NormalTok{, }\StringTok{"row_2"}\NormalTok{, }\StringTok{"row_3"}\NormalTok{)}
+\KeywordTok{colnames}\NormalTok{(test_matrix)<-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"col_1"}\NormalTok{, }\StringTok{"col_2"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{question-2}{%
+\paragraph{Question 2}\label{question-2}}
+
+\begin{itemize}
+\tightlist
+\item
+  Load then sort the airquality data frame on its \texttt{Temp} and
+  \texttt{Solar.R} columns in reverse order (largest to smallest values)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    The function to sort a data frame is called order
+  \end{itemize}
+\item
+  Display only the first 15 lines of your table
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Write your answer here}
+\NormalTok{airqual_temp<-airquality[}\KeywordTok{order}\NormalTok{(airquality}\OperatorTok{$}\NormalTok{Temp, }\DataTypeTok{decreasing =} \OtherTok{TRUE}\NormalTok{),]}
+\NormalTok{airqual_solar<-airquality[}\KeywordTok{order}\NormalTok{(airquality}\OperatorTok{$}\NormalTok{Solar.R, }\DataTypeTok{decreasing =} \OtherTok{TRUE}\NormalTok{),]}
+\KeywordTok{head}\NormalTok{(airqual_temp, }\DataTypeTok{n =} \DecValTok{15}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     Ozone Solar.R Wind Temp Month Day
+## 120    76     203  9.7   97     8  28
+## 122    84     237  6.3   96     8  30
+## 121   118     225  2.3   94     8  29
+## 123    85     188  6.3   94     8  31
+## 42     NA     259 10.9   93     6  11
+## 126    73     183  2.8   93     9   3
+## 127    91     189  4.6   93     9   4
+## 43     NA     250  9.2   92     6  12
+## 69     97     267  6.3   92     7   8
+## 70     97     272  5.7   92     7   9
+## 102    NA     222  8.6   92     8  10
+## 125    78     197  5.1   92     9   2
+## 75     NA     291 14.9   91     7  14
+## 124    96     167  6.9   91     9   1
+## 40     71     291 13.8   90     6   9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{head}\NormalTok{(airqual_solar, }\DataTypeTok{n =} \DecValTok{15}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Ozone Solar.R Wind Temp Month Day
+## 16    14     334 11.5   64     5  16
+## 45    NA     332 13.8   80     6  14
+## 41    39     323 11.5   87     6  10
+## 19    30     322 11.5   68     5  19
+## 46    NA     322 11.5   79     6  15
+## 22    11     320 16.6   73     5  22
+## 67    40     314 10.9   83     7   6
+## 4     18     313 11.5   62     5   4
+## 17    34     307 12.0   66     5  17
+## 7     23     299  8.6   65     5   7
+## 84    NA     295 11.5   82     7  23
+## 85    80     294  8.6   86     7  24
+## 40    71     291 13.8   90     6   9
+## 75    NA     291 14.9   91     7  14
+## 13    11     290  9.2   66     5  13
+\end{verbatim}
+
+\hypertarget{question-3}{%
+\paragraph{Question 3}\label{question-3}}
+
+\begin{itemize}
+\tightlist
+\item
+  Sort the airquality data frame on its \texttt{Temp} in decreasing
+  order and \texttt{Solar.R} in increasing order
+\item
+  Display only the first 15 lines of your table
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Write your answer here}
+\NormalTok{airqual_temp1<-airquality[}\KeywordTok{order}\NormalTok{(airquality}\OperatorTok{$}\NormalTok{Temp, }\DataTypeTok{decreasing =} \OtherTok{TRUE}\NormalTok{),]}
+\NormalTok{airqual_solar1<-airquality[}\KeywordTok{order}\NormalTok{(airquality}\OperatorTok{$}\NormalTok{Solar.R, }\DataTypeTok{decreasing =} \OtherTok{FALSE}\NormalTok{),]}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{question-4}{%
+\paragraph{Question 4}\label{question-4}}
+
+\begin{itemize}
+\item
+  There are various ways to select a subset of observations from a data
+  frame.
+\item
+  Consult your
+  \href{https://cran.r-project.org/doc/contrib/Baggott-refcard-v2.pdf}{R
+  Reference Card}, see \texttt{Data\ Selection\ and\ Manipulation}
+  section.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    What operations can you use to select all observations where the
+    temperature is 72. Give at least two different answers to this
+    question
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Write your answer here}
+\KeywordTok{subset}\NormalTok{(airquality, Temp }\OperatorTok{==}\StringTok{ }\DecValTok{72}\NormalTok{) }\CommentTok{#answer 1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     Ozone Solar.R Wind Temp Month Day
+## 2      36     118  8.0   72     5   2
+## 48     37     284 20.7   72     6  17
+## 114     9      36 14.3   72     8  22
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{temp_}\DecValTok{72}\NormalTok{ <-}\StringTok{ }\NormalTok{airquality}\OperatorTok{$}\NormalTok{temp }\OperatorTok{==}\StringTok{ }\DecValTok{72} \CommentTok{#answer 2}
+\NormalTok{airquality[temp_}\DecValTok{72}\NormalTok{,]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] Ozone   Solar.R Wind    Temp    Month   Day    
+## <0 rows> (or 0-length row.names)
+\end{verbatim}
+
+\hypertarget{question-6}{%
+\paragraph{Question 6}\label{question-6}}
+
+\begin{itemize}
+\tightlist
+\item
+  You may have noticed when working with the \texttt{airqulity} data
+  that some values show as \texttt{NA}
+\item
+  \texttt{NA} stands for not available, or missing values.
+\item
+  A major part of data wrangling consists of cleaning missing values by
+  either:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Dropping the lines that have missing values
+  \item
+    Sometimes we can drop the column with missing values if the column
+    is made of predominantly missing values
+  \item
+    Imputing the missing values, which uses educated guesses (or more
+    complex algorithms) to fill the missing values
+  \end{itemize}
+\item
+  Find and remove all rows that are missing values for the
+  \texttt{Solar.R} or \texttt{Ozone} variables
+\item
+  Save the cleaned data to a new data frame called airquality\_no\_na
+
+  \begin{itemize}
+  \tightlist
+  \item
+    How many lines have been removed?
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Write your answer here}
+
+\NormalTok{air_quality_no_na<-airquality[}\KeywordTok{is.na}\NormalTok{(airquality}\OperatorTok{$}\NormalTok{Solar.R) }\OperatorTok{==}\StringTok{ }\OtherTok{FALSE} \OperatorTok{&}\StringTok{ }\KeywordTok{is.na}\NormalTok{(airquality}\OperatorTok{$}\NormalTok{Ozone) }\OperatorTok{==}\StringTok{ }\OtherTok{FALSE}\NormalTok{,]}
+
+\CommentTok{# 42 lines were removed}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{question-7}{%
+\paragraph{Question 7}\label{question-7}}
+
+\begin{itemize}
+\tightlist
+\item
+  Let's use a different strategy and impute the missing value.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    replace the missing values for Solar.R using that month's average.
+  \item
+    Example:
+
+    \begin{itemize}
+    \tightlist
+    \item
+      The missing value for line 6 should be replaced with the average
+      for month 5.
+    \item
+      The missing value for line 97 should be replaced with the average
+      for month 8.
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Write your answer here}
+\NormalTok{na_solar<-airquality[}\KeywordTok{is.na}\NormalTok{(airquality}\OperatorTok{$}\NormalTok{Solar.R),] }\CommentTok{#subset rows where solar.r is NA}
+\NormalTok{mean_}\DecValTok{5}\NormalTok{ <-}\StringTok{ }\KeywordTok{mean}\NormalTok{(airquality}\OperatorTok{$}\NormalTok{Solar.R[airquality}\OperatorTok{$}\NormalTok{Month }\OperatorTok{%in%}\StringTok{ }\KeywordTok{unique}\NormalTok{(na_solar}\OperatorTok{$}\NormalTok{Month)[}\DecValTok{1}\NormalTok{]], }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{) }\CommentTok{#finds mean of month 5}
+\NormalTok{mean_}\DecValTok{8}\NormalTok{ <-}\StringTok{ }\KeywordTok{mean}\NormalTok{(airquality}\OperatorTok{$}\NormalTok{Solar.R[airquality}\OperatorTok{$}\NormalTok{Month }\OperatorTok{%in%}\StringTok{ }\KeywordTok{unique}\NormalTok{(na_solar}\OperatorTok{$}\NormalTok{Month)[}\DecValTok{2}\NormalTok{]], }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{) }\CommentTok{#finds mean of month 8}
+\NormalTok{copy_airquality <-}\StringTok{ }\NormalTok{airquality }\CommentTok{#because I don't want to mess with the original dataset }
+\NormalTok{copy_airquality[}\KeywordTok{is.na}\NormalTok{(airquality}\OperatorTok{$}\NormalTok{Solar.R[airquality}\OperatorTok{$}\NormalTok{Month }\OperatorTok{==}\DecValTok{5}\NormalTok{]), }\DecValTok{2}\NormalTok{] <-}\StringTok{ }\NormalTok{mean_}\DecValTok{5} \CommentTok{#replaces month 5 na values with mean}
+\NormalTok{copy_airquality[}\KeywordTok{is.na}\NormalTok{(airquality}\OperatorTok{$}\NormalTok{Solar.R[airquality}\OperatorTok{$}\NormalTok{Month }\OperatorTok{==}\DecValTok{8}\NormalTok{]), }\DecValTok{2}\NormalTok{] <-}\StringTok{ }\NormalTok{mean_}\DecValTok{8} \CommentTok{#replaces month 8 na values with mean}
+\end{Highlighting}
+\end{Shaded}
+
+\end{document}

@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 ### Question 0
 
 *  Draw a concepts diagram that uses all the following Github terminology 
@@ -7,7 +12,8 @@
 `Push`, `Repository`, `Clone`, `Pull`, `Pull Request`, `Branch`, `Merging`, `Github Client`, `README file`, `Private or Public`
 
 ```{r}
-# Add your photo here
+# I cannot figure out how to knit the pdf image to this markdown file. I'll keep trying.
+https://www.dropbox.com/s/1t3fu3pqdhrvcfb/Concept_map_2.pdf?dl=1
 ```
 
 #### Question 1
@@ -114,11 +120,12 @@ air_quality_no_na<-airquality[is.na(airquality$Solar.R) == FALSE & is.na(airqual
 
 ```{r}
 # Write your answer here
-na_solar<-airquality[is.na(airquality$Solar.R),] #find value that equals NA
+na_solar<-airquality[is.na(airquality$Solar.R),] #subset rows where solar.r is NA
+mean_5 <- mean(airquality$Solar.R[airquality$Month %in% unique(na_solar$Month)[1]], na.rm = TRUE) #finds mean of month 5
+mean_8 <- mean(airquality$Solar.R[airquality$Month %in% unique(na_solar$Month)[2]], na.rm = TRUE) #finds mean of month 8
+copy_airquality <- airquality #because I don't want to mess with the original dataset 
+copy_airquality[is.na(airquality$Solar.R[airquality$Month ==5]), 2] <- mean_5 #replaces month 5 na values with mean
+copy_airquality[is.na(airquality$Solar.R[airquality$Month ==8]), 2] <- mean_8 #replaces month 8 na values with mean
 
-#subset the month
-#find the average temperature for that month
-#replace the NA with the average
-a
 ```
 
