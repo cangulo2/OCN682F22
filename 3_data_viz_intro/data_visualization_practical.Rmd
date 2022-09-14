@@ -43,7 +43,7 @@ mpg$class_numeric <- sapply(mpg$class, convert_class_int, USE.NAMES = FALSE)
 
 ```{r}
 # Write your code here
-mpg$class_numeric<- as.factor(mpg$class)
+mpg$class_numeric <- as.factor(mpg$class)
 ```
 
 **Question 4** 
@@ -140,17 +140,6 @@ ggplot(sizeMass, aes(size_log10, mass_log10)) +
      geom_smooth(method = "lm", color = "red", se = FALSE)
 
 ```
-
-
-
-
-
-
-
-
-
-
-
 ``` {r}
 ## Method 2
 ggplot(sizeMass, aes(size, mass)) +
